@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First VueJS App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="row">
+            <div class="col">
+                <fieldset>
+                    <legend>Data Editor</legend>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input v-model="title" type="text" id="title" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea v-model="message" id="message" class="form-control" cols="10" rows="5"></textarea>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col">
+                <h2>{{ title }}</h2>
+                <p :title="title">{{ message }}</p>
+            </div> 
+        </div>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                title: 'First VueJS App',
+                message: 'Hello, Vue!'
+            }
+        });
+    </script>
+</body>
+</html>
